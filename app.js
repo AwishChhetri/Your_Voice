@@ -96,7 +96,7 @@ app.post('/registers', upload.array('image'),async(req,res)=>{
             image1:req.files[1].filename,
         });
         users.save();
-        res.send('submitted')
+        res.redirect('/login')
        
     }catch(err){
         console.log(err,'errrr')
