@@ -16,7 +16,7 @@ const secretKey = 'HelloguyshowAreu';
 app.use(cookieParser());
 app.use(express.json())
 app.get('/',(req,res)=>{
-    res.redirect('/home');
+    res.render('home');
 })
 
 app.get('/register',(req,res)=>{
