@@ -58,7 +58,11 @@ const userSchema= new mongoose.Schema({
         type: String,
         allowNull:true
      },
-     image1:{
+     btncolor:{
+        type: String,
+        allowNull:true
+     },
+     txtColor:{
         type: String,
         allowNull:true
      },
@@ -83,7 +87,7 @@ const upload = multer({ storage: storage });
 app.post('/registers', upload.array('image'),async(req,res)=>{
    
     try{
-        // console.log(req)
+         console.log(req.body)
         // console.log('runiing here',req.files.filename)
 
       var users= new User({
@@ -91,9 +95,11 @@ app.post('/registers', upload.array('image'),async(req,res)=>{
             password:req.body.password,
             firstname:req.body.fname,
             lastname:req.body.lname,
+            btncolor:req.body.color,
+            txtColor:req.body.txtColor,
             Age:req.body.age,
             image:req.files[0].filename,
-            image1:req.files[1].filename,
+           
         });
         users.save();
         res.redirect('/login')
@@ -144,7 +150,10 @@ app.get('/home',checkAuth,(req,res,next)=>{
             Email:req.user.email,
             Age:req.user.Age,
             Image:req.user.image,
+            Color:req.user.btncolor,
+            txtColor:req.user.txtColor,
         });
+        console.log(req.user.btncolorcolor)
     }else{
         res.redirect('/login')
     }

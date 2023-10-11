@@ -15,6 +15,7 @@
               <input name="lname" placeholder="Last Name">
               
               <input type="number" name="age" placeholder="age">
+              <br>
               <label for="email">Email</label>
               <input type="email" class="form-control" name="username">
             </div>
@@ -25,7 +26,22 @@
               <input type="password" class="form-control" name="password">
               <input type="file" name="image" placeholder="Your Id photo">
 
-                <input type="file" name="image" placeholder="Place Your image">
+              <label>Choose button color:</label>
+              <select id="btncolor" name="color">
+                  <option value="red">red</option>
+                  <option value="yellow">yellow</option>
+                  <option value="blue">blue</option>
+                  <option value="purple">purple</option>
+              </select>
+
+              <label>Choose Text color:</label>
+              <select id="txtColor" name="txtColor">
+                  <option value="red">red</option>
+                  <option value="yellow">yellow</option>
+                  <option value="blue">blue</option>
+                  <option value="purple">purple</option>
+              </select>
+
             </div>
             <button type="submit" class="btn btn-dark">Register</button>
           </form>
