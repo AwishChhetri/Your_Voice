@@ -27,6 +27,10 @@ app.get('/login',(req,res)=>{
     res.render('login');
 })
 
+app.get('/form',(req,res)=>{
+    res.render('form');
+})
+
 mongoose.connect('mongodb+srv://abishchhetri2502:djkoVelibOuIqXLr@cluster0.ky58rk9.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true}).then((res)=>{
     console.log('mongoose db connected');
   }).catch((err)=>{
@@ -66,12 +70,16 @@ const userSchema= new mongoose.Schema({
         type: String,
         allowNull:true
      },
+     
+     
 
 },{
     timestamps:true
 })
 
 const User=mongoose.model('Users',userSchema)
+
+
 
 
 const storage = multer.diskStorage({

@@ -1,67 +1,160 @@
-<%- include('partials/header') %>
-<div class="container mt-5">
-  <h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(192, 132, 252);
+        }
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
+        .container {
+            margin-top: 5rem;
+            text-align: center;
+         
+        }
 
-          <!-- Makes POST request to /register route -->
-          <form action="/registers" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-            
-              <input name="fname" placeholder="First Name"> 
-              <input name="lname" placeholder="Last Name">
-              
-              <input type="number" name="age" placeholder="age">
-              <br>
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
+        .card {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 2px 6px black purple;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 90%;
+            padding: 0.5rem;
+            margin: 0.2rem 0;
+            border: 3px solid purple;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        select {
+            height: 2.5rem;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            background-color: #343a40;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #23272b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-3xl font-bold text-purple-800 mb-4">Register</h1>
+      
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="card bg-purple-300 shadow-lg">
+              <div class="card-body p-8">
+      
+                <!-- Makes POST request to /register route -->
+                <form action="/registers" method="POST" enctype="multipart/form-data">
+                  <div class="form-group mb-4">
+                    <input
+                      name="fname"
+                      placeholder="First Name"
+                      class="w-full py-2 px-3 bg-purple-100 rounded-md border border-purple-400 placeholder-gray-600 focus:outline-none focus:border-purple-600"
+                    />
+                    <input
+                      name="lname"
+                      placeholder="Last Name"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 placeholder-gray-600 focus:outline-none focus:border-purple-600"
+                    />
+                    <input
+                      type="number"
+                      name="age"
+                      placeholder="Age"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 placeholder-gray-600 focus:outline-none focus:border-purple-600"
+                    />
+                    <br>
+                    <label for="username" class="text-gray-700">Email</label>
+                    <input
+                      type="email"
+                      name="username"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 placeholder-gray-600 focus:outline-none focus:border-purple-600"
+                    />
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="password" class="text-gray-700">Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      class="w-full py-2 px-3 bg-purple-100 rounded-md border border-purple-400 placeholder-gray-600 focus:outline-none focus:border-purple-600"
+                    />
+                    <input
+                      type="file"
+                      name="image"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 focus:outline-none focus:border-purple-600"
+                    />
+      
+                    <label for="color" class="text-gray-700">Department:</label>
+                    <select
+                      id="btncolor"
+                      name="color"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 focus:outline-none focus:border-purple-600"
+                    >
+                      <option value="CSE">Computer Science</option>
+                      <option value="Mechanical">Mechanical</option>
+                      <option value="Civil">Civil</option>
+                      <option value="Electrical">Electrical</option>
+                    </select>
+      
+                    <label for="txtColor" class="text-gray-700">Degree</label>
+                    <select
+                      id="txtColor"
+                      name="txtColor"
+                      class="w-full py-2 px-3 mt-2 bg-purple-100 rounded-md border border-purple-400 focus:outline-none focus:border-purple-600"
+                    >
+                      <option value="M.tech">M.tech</option>
+                      <option value="Ph. D.">Ph. D.</option>
+                      <option value="MBA">MBA</option>
+                      <option value="MSc">MSc</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="bg-black text-white py-2 px-4 rounded-full hover:bg-purple-800 transition duration-300">
+                    Register
+                  </button>
+                </form>
+      
+              </div>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              
- 
-              <input type="password" class="form-control" name="password">
-              <input type="file" name="image" placeholder="Your Id photo">
-
-              <label>Choose button color:</label>
-              <select id="btncolor" name="color">
-                  <option value="red">red</option>
-                  <option value="yellow">yellow</option>
-                  <option value="blue">blue</option>
-                  <option value="purple">purple</option>
-              </select>
-
-              <label>Choose Text color:</label>
-              <select id="txtColor" name="txtColor">
-                  <option value="red">red</option>
-                  <option value="yellow">yellow</option>
-                  <option value="blue">blue</option>
-                  <option value="purple">purple</option>
-              </select>
-
-            </div>
-            <button type="submit" class="btn btn-dark">Register</button>
-          </form>
-
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- <div class="col-sm-4">
-      <div class="card social-block">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign Up with Google
-          </a>
-        </div>
-      </div>
-    </div> -->
-
-  </div>
-</div>
-
-<%- include('partials/header') %>
+      
+    
+</body>
+</html>

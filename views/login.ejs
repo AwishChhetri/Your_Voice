@@ -1,5 +1,69 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/* Style for the login page */
 
+        body {
+          font-family: Arial, sans-serif;
+          background: rgb(2,5,19);
+background: radial-gradient(circle, rgba(2,5,19,1) 45%, rgba(189,70,252,1) 99%);
+        }
+        
+        .container {
+          text-align: center;
+        }
+        
+        .card {
+          max-width: 400px;
+          margin: 0 auto;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          padding: 20px;
+          margin-top: 20px;
+        }
+        
+        .form-group {
+          text-align: left;
+          margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+          font-weight: bold;
+        }
+        
+        .form-control {
+          width: 100%;
+          padding: 0.5rem;
+          margin: 0.2rem 0;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          font-size: 1rem;
+        }
+        
+        .btn {
+          background-color: #343a40;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+        }
+        
+        .btn-dark {
+          background-color: #343a40;
+        }
+        
+        .btn-dark:hover {
+          background-color: #23272b;
+        }
+        </style>
+</head>
+<body>
+  
 <div class="container mt-5">
   <h1>Login</h1>
 
@@ -9,14 +73,14 @@
         <div class="card-body">
 
           <!-- Makes POST request to /login route -->
-          <form action="/login" method="POST">
+          <form action="/login" method="POST" class="login-form">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
+              <input type="email" class="form-control" name="username" placeholder="Enter your email">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="form-control" name="password" placeholder="Enter your password">
             </div>
             <button type="submit" class="btn btn-dark">Login</button>
           </form>
@@ -24,20 +88,9 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign In with Google
-          </a>
-        </div>
-      </div>
-    </div> -->
-
   </div>
 </div>
 
 
-<%- include('partials/footer') %>
+</body>
+</html>

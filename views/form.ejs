@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Submission Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* styles.css */
+
+body {
+    background-color: #F5E1F7;
+    font-family: 'Open Sans', sans-serif; /* Change to Open Sans */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #9932CC;
+    text-align: center;
+    font-family: 'Lobster', cursive; /* Change to Lobster */
+    margin-right: 100px;
+    font-size: 50px;
+}
+
+label {
+    color: #9932CC;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #9932CC;
+    border-radius: 5px;
+    background-color: #E6D6F5;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #800080;
+}
+
+input[type="submit"] {
+    background-color: #9932CC;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+input[type="submit"]:hover {
+    background-color: #800080;
+}
+</style>
+<body>
+    <h2>Submit Your Research</h2>
+    <form action="submit_research.php" method="post">
+        <label for="title">Research Title:</label>
+        <input type="text" name="title" id="title" required><br><br>
+
+        <label for="author">Author(s):</label>
+        <input type="text" name="author" id="author" required><br><br>
+
+        <label for="abstract">Abstract:</label><br>
+        <textarea name="abstract" id="abstract" rows="4" required></textarea><br><br>
+
+        <label for="upload">Upload Research Paper (PDF):</label>
+        <input type="file" name="upload" id="upload" accept=".pdf" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
