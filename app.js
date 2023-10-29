@@ -12,12 +12,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 const secretKey = 'HelloguyshowAreu';
+app.use(express.static(__dirname+'/public/css/assets'));
 
 app.use(cookieParser());
 app.use(express.json())
 app.get('/',(req,res)=>{
     res.render('home');
 })
+
+
 
 app.get('/register',(req,res)=>{
     res.render('register');
