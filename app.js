@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 const secretKey = 'HelloguyshowAreu';
-app.use(express.static(__dirname+'/public/css/assets'));
+app.use(express.static(__dirname+'/public/asset'));
 
 app.use(cookieParser());
 app.use(express.json())
@@ -30,8 +30,8 @@ app.get('/login',(req,res)=>{
     res.render('login');
 })
 
-app.get('/form',(req,res)=>{
-    res.render('form');
+app.get('/profile',(req,res)=>{
+    res.render('profile');
 })
 
 mongoose.connect('mongodb+srv://abishchhetri2502:djkoVelibOuIqXLr@cluster0.ky58rk9.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true}).then((res)=>{
