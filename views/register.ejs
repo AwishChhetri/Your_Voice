@@ -3,76 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
     <title>Document</title>
-    <style>
-         body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(192, 132, 252);
-        }
 
-        .container {
-            margin-top: 5rem;
-            text-align: center;
-         
-        }
+     <!-- Font Icon -->
+     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-        .card {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 2px 6px black purple;
-        }
-
-        .form-group {
-            text-align: left;
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        input[type="password"],
-        select {
-            width: 90%;
-            padding: 0.5rem;
-            margin: 0.2rem 0;
-            border: 3px solid purple;
-            border-radius: 3px;
-            font-size: 1rem;
-        }
-
-        select {
-            height: 2.5rem;
-        }
-
-        input[type="file"] {
-            width: 100%;
-            margin-top: 0.5rem;
-        }
-
-        button {
-            background-color: #343a40;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #23272b;
-        }
-    </style>
+     <!-- Main css -->
+     <link rel="stylesheet" href="css1/style.css">
+   
 </head>
 <body>
-    <div class="container mt-5">
+  <div class="main">
+
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h1 class="form-title">Sign up</h1>
+                    <form action="/registers" method="POST" enctype="multipart/form-data" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="name" id="name" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="number" name="phoneNumber" id="pass" placeholder="Phone Number"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="password" name="password" id="re_pass" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="/register" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+
+  <!-- End -->
+    <!-- <div class="container mt-5">
         <h1 class="text-3xl font-bold text-purple-800 mb-4">Register</h1>
       
         <div class="row">
@@ -81,7 +68,7 @@
               <div class="card-body p-8">
       
                 <!-- Makes POST request to /register route -->
-                <form action="/registers" method="POST" enctype="multipart/form-data">
+                <!-- <form action="/registers" method="POST" enctype="multipart/form-data">
                   <div class="form-group mb-4">
                     <input
                       name="fname"
@@ -152,9 +139,54 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+      </div> -->
       
-    
+    <!-- New register -->
+
+
+    <!-- <div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div class="px-6 py-4">
+          <div class="flex justify-center mx-auto">
+              <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+          </div>
+  
+          <h3 class="mt-3 text-xl font-medium text-center text-gray-600 dark:text-gray-200">Welcome Back</h3>
+  
+          <p class="mt-1 text-center text-gray-500 dark:text-gray-400">Login </p>
+  
+          <form action="/registers" method="POST" enctype="multipart/form-data">
+            <div class="w-full mt-4">
+              <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="text" placeholder="Name" aria-label="Name" />
+            </div>
+
+            <div class="w-full mt-4">
+              <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="number" placeholder="Phone Number" aria-label="Phone Number" />
+            </div>
+              
+              <div class="w-full mt-4">
+                  <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="email" placeholder="Email Address" aria-label="Email Address" />
+              </div>
+  
+              <div class="w-full mt-4">
+                  <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="password" placeholder="Password" aria-label="Password" />
+              </div>
+  
+              <div class="flex items-center justify-between mt-4">
+                  <a href="#" class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500">Forget Password?</a>
+  
+                  <button type="submit" class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                      Sign Up
+                  </button>
+              </div>
+          </form>
+      </div>
+  
+      <div class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
+          <span class="text-sm text-gray-600 dark:text-gray-200">Already have an account? </span>
+  
+          <a href="/login" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Login</a>
+      </div>
+  </div> -->
 </body>
 </html>

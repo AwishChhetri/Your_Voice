@@ -3,94 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>/* Style for the login page */
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
 
-        body {
-          font-family: Arial, sans-serif;
-          background: rgb(2,5,19);
-background: radial-gradient(circle, rgba(2,5,19,1) 45%, rgba(189,70,252,1) 99%);
-        }
-        
-        .container {
-          text-align: center;
-        }
-        
-        .card {
-          max-width: 400px;
-          margin: 0 auto;
-          background-color: #fff;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          border-radius: 5px;
-          padding: 20px;
-          margin-top: 20px;
-        }
-        
-        .form-group {
-          text-align: left;
-          margin-bottom: 1rem;
-        }
-        
-        .form-group label {
-          font-weight: bold;
-        }
-        
-        .form-control {
-          width: 100%;
-          padding: 0.5rem;
-          margin: 0.2rem 0;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          font-size: 1rem;
-        }
-        
-        .btn {
-          background-color: #343a40;
-          color: #fff;
-          border: none;
-          border-radius: 3px;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-        }
-        
-        .btn-dark {
-          background-color: #343a40;
-        }
-        
-        .btn-dark:hover {
-          background-color: #23272b;
-        }
-        </style>
+     <!-- Font Icon -->
+     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+     <!-- Main css -->
+     <link rel="stylesheet" href="css1/style.css">
+    <title>Document</title>
+   
 </head>
 <body>
-  
-<div class="container mt-5">
-  <h1>Login</h1>
+  <div class="main">
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
+    <section class="sign-in">
+      <div class="container">
+          <div class="signin-content">
+              <div class="signin-image">
+                  <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                  <a href="#" class="signup-image-link">Create an account</a>
+              </div>
 
-          <!-- Makes POST request to /login route -->
-          <form action="/login" method="POST" class="login-form">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Enter your password">
-            </div>
-            <button type="submit" class="btn btn-dark">Login</button>
-          </form>
-
-        </div>
+              <div class="signin-form">
+                  <h2 class="form-title">Sign up</h2>
+                  <form method="POST" class="register-form" id="login-form">
+                      <div class="form-group">
+                          <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                          <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                      </div>
+                      <div class="form-group">
+                          <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                          <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                      </div>
+                      <div class="form-group">
+                          <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                          <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                      </div>
+                      <div class="form-group form-button">
+                          <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                      </div>
+                  </form>
+                  <div class="social-login">
+                      <span class="social-label">Or login with</span>
+                      <ul class="socials">
+                          <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                          <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                          <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
+  </section>
+
 </div>
 
 
+
+
+<!-- new signup -->
+<!-- 
+<div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+  <div class="px-6 py-4">
+      <div class="flex justify-center mx-auto">
+          <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+      </div>
+
+      <h3 class="mt-3 text-xl font-medium text-center text-gray-600 dark:text-gray-200">Welcome Back</h3>
+
+      <p class="mt-1 text-center text-gray-500 dark:text-gray-400">Login or create account</p>
+
+      <form>
+          <div class="w-full mt-4">
+              <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="email" placeholder="Email Address" aria-label="Email Address" />
+          </div>
+
+          <div class="w-full mt-4">
+              <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="password" placeholder="Password" aria-label="Password" />
+          </div>
+
+          <div class="flex items-center justify-between mt-4">
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500">Forget Password?</a>
+
+              <button class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                  Sign In
+              </button>
+          </div>
+      </form>
+  </div>
+
+  <div class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
+      <span class="text-sm text-gray-600 dark:text-gray-200">Don't have an account? </span>
+
+      <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Register</a>
+  </div>
+</div> -->
 </body>
 </html>

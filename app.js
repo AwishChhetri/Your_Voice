@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 
 const secretKey = 'HelloguyshowAreu';
 app.use(express.static(__dirname+'/public/asset'));
+app.use(express.static(__dirname+'/public/SignUpFile'));
 
 app.use(cookieParser());
 app.use(express.json())
